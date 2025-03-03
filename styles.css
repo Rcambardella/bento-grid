@@ -1,0 +1,230 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'DM Sans',sans-serif;
+    text-decoration: none;
+}
+html, body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(241, 241, 241);
+}
+.container{
+    display: grid;
+    grid-template-columns: [c1] 24% [c2] 26% [c3] 26% [c4] 24% [c5];
+    grid-template-rows: [r1] 40% [r2] 8% [r3] 22% [r4] 30% [r5];
+
+    column-gap: 30px;
+    row-gap: 30px;
+
+    justify-items: stretch;
+
+    height: 800px;
+    width: 1040px;
+}
+.sm-box {
+    grid-column-start: c2;
+    grid-column-end: c4;
+    grid-row-start: r1;
+    grid-row-end: r2;
+
+    background: hsl(256, 93%, 62%);
+    border-radius: 10px;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+.mm-box {
+    grid-column-start: c2;
+    grid-column-end: c3;
+    grid-row-start: r2;
+    grid-row-end: r4;
+
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+.cal-box {
+    grid-column-start: c3;
+    grid-column-end: c4;
+    grid-row-start: r2;
+    grid-row-end: r4;
+
+    background: hsl(39, 100%, 71%);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.sched-box {
+    grid-column-start: c4;
+    grid-column-end: c5;
+    grid-row-start: r1;
+    grid-row-end: r4;
+
+    background: hsl(260, 68%, 88%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+  }
+.grow-box {
+    grid-column-start: c3;
+    grid-column-end: c5;
+    grid-row-start: r4;
+    grid-row-end: r5;
+
+    background: hsl(256, 93%, 62%);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fast-box {
+    grid-column-start: c2;
+    grid-column-end: c3;
+    grid-row-start: r4;
+    grid-row-end: r5;
+
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    gap: 10px;
+  }
+.create-box {
+    grid-column-start: c1;
+    grid-column-end: c2;
+    grid-row-start: r1;
+    grid-row-end: r3;
+
+    background: hsl(31, 66%, 93%);
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.ai-box {
+    grid-column-start: c1;
+    grid-column-end: c2;
+    grid-row-start: r3;
+    grid-row-end: r5;
+
+    background: hsl(39, 100%, 71%);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+.sm-box, .mm-box, .cal-box, .sched-box, .grow-box, .fast-box, .create-box, .ai-box {
+    overflow: hidden;
+}
+
+.ai-box img, .fast-box img, .create-box img, .grow-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sm-box img {
+    width: 45%;
+    height: 45%;
+    object-fit: contain;
+}
+
+.mm-box img {
+    height: 35%;
+    object-fit: contain;
+}
+
+.sched-box img {
+    width: 100%;
+    height: 320px; /* control how tall the image is */
+    object-fit: cover;
+    object-position: left; /* adjust which part of the image shows */
+    flex-shrink: 0; /* prevents it from shrinking in flexbox */
+}
+
+.sched-box h4, .sched-box p {
+    padding-right: 35px;
+}
+
+.cal-box img {
+    height: 80%;
+    object-fit: contain;
+}
+
+.fast-box img {
+    height: 35%;
+    object-fit: contain;
+}
+
+.fast-box p {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+h3 {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+h4 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1; 
+}
+
+@media (max-width: 375px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* space between each box */
+    }
+  
+    /* Reset any grid-specific positioning for the boxes */
+    .sched-box,
+    .sm-box,
+    .mm-box,
+    .cal-box,
+    .grow-box,
+    .fast-box,
+    .create-box,
+    .ai-box {
+      grid-column: auto;
+      grid-row: auto;
+      width: 100%;
+    }
+  }
+
