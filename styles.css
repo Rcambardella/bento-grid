@@ -6,8 +6,11 @@
     text-decoration: none;
 }
 html, body {
+    max-width: 1440px;
+    width: 100%;
     height: 100vh;
-    margin: 0;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,14 +20,14 @@ html, body {
     display: grid;
     grid-template-columns: [c1] 24% [c2] 26% [c3] 26% [c4] 24% [c5];
     grid-template-rows: [r1] 40% [r2] 8% [r3] 22% [r4] 30% [r5];
-
     column-gap: 30px;
     row-gap: 30px;
 
-    justify-items: stretch;
-
-    height: 800px;
-    width: 1040px;
+    max-width: 1040px; /* Design width of the actual grid area */
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    margin: 0 auto; /* Center the grid inside the wrapper */
+    padding: 20px; /* Optional */
 }
 .sm-box {
     grid-column-start: c2;
@@ -75,7 +78,7 @@ html, body {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 30px;
@@ -165,7 +168,7 @@ html, body {
 }
 
 .sched-box h4, .sched-box p {
-    padding-right: 35px;
+    padding-right: 25px;
 }
 
 .cal-box img {
@@ -206,25 +209,141 @@ p {
     line-height: 1; 
 }
 
-@media (max-width: 375px) {
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px; /* space between each box */
+@media (max-width: 768px) {
+
+    html, body {
+        height: auto;
+        display: block;
     }
-  
-    /* Reset any grid-specific positioning for the boxes */
-    .sched-box,
+
+    /* Scaled-down typography */
+    h1 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 26px;
+    }
+
+    h4 {
+        font-size: 19px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Mobile container reset */
+    .container {
+        display: block; /* ✅ FULLY removes grid behavior */
+        max-width: 310px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Card reset */
     .sm-box,
-    .mm-box,
+    .sched-box,
     .cal-box,
     .grow-box,
     .fast-box,
     .create-box,
-    .ai-box {
-      grid-column: auto;
-      grid-row: auto;
-      width: 100%;
+    .ai-box,
+    .mm-box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 20px; /* To replace the grid's gap */
+        gap: 10px;
     }
-  }
+
+    /* Images should also flex with content */
+    .sm-box img,
+    .sched-box img,
+    .cal-box img,
+    .grow-box img,
+    .fast-box img,
+    .create-box img,
+    .ai-box img,
+    .mm-box img {
+        width: 100%;
+        height: auto;
+        object-fit: contain; /* Or remove if you want full image height */
+    }
+
+    .sm-box {
+        padding: 30px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mm-box {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .cal-box {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .sched-box {
+        padding: 10px;
+        gap: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grow-box {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .fast-box {
+        padding: 30px;
+        align-items: flex-start;
+    }
+
+    .create-box {
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .ai-box {
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .sm-box img {
+        max-height: 20px;
+    }
+
+    .cal-box img {
+        max-height: 100px;
+    }
+
+    .fast-box img {
+        max-height: 50px;
+    }
+
+    .create-box img {
+        max-height: 60px;
+    }
+
+    .ai-box img {
+        max-height: 130px;
+    }
+}
+
+
+
+
+  
+  
+  
+  
 
